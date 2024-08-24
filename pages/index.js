@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import Header from '../Components/Header/Header';
 
 export default function Home() {
   const [file, setFile] = useState(null);
@@ -31,6 +32,8 @@ export default function Home() {
   };
 
   return (
+    <>
+    <Header/>
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center p-6">
       <h1 className="text-3xl font-bold mb-6 text-blue-600">Voice Transcription App</h1>
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-full max-w-md">
@@ -55,5 +58,7 @@ export default function Home() {
         </div>
       )}
     </div>
+    </>
+    
   );
 }
