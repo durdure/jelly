@@ -1,7 +1,4 @@
-// pages/contact.js
-
 import React from 'react';
-import Header from '../Components/Header/Header';
 
 export default function Contact() {
   return (
@@ -17,15 +14,12 @@ export default function Contact() {
         backgroundAttachment: 'fixed',
       }}
     >
-      <Header />
       <main className="pt-20">
-        {/* Contact Header Section */}
         <section className="bg-gray-900 text-white text-center py-20">
           <h1 className="text-4xl font-bold">Contact Us</h1>
           <p className="mt-4 text-xl">We'd love to hear from you. Reach out to us with any questions or feedback.</p>
         </section>
 
-        {/* Contact Form Section */}
         <section className="py-16">
           <div className="container mx-auto flex flex-col items-center">
             <div
