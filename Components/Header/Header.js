@@ -64,7 +64,7 @@ function Header() {
         >
           <Link href="/" style={{ color: '#BB86FC', transition: 'color 0.3s' }} className="hover:text-cyan-300">Home</Link>
           <Link href="/features" style={{ color: '#BB86FC', transition: 'color 0.3s' }} className="hover:text-cyan-300">Features</Link>
-          <Link href="/contact" style={{ color: '#BB86FC', transition: 'color 0.3s' }} className="hover:text-cyan-300">Contact</Link>
+          <Link href="/Contact" style={{ color: '#BB86FC', transition: 'color 0.3s' }} className="hover:text-cyan-300">Contact</Link>
           <Link href="/about" style={{ color: '#BB86FC', transition: 'color 0.3s' }} className="hover:text-cyan-300">About</Link>
         </nav>
 

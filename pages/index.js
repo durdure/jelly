@@ -1,6 +1,10 @@
 import React from 'react';
 import Header from '../Components/Header/Header'
 import Contact from '../Components/Contact/Contact';
+import Link from 'next/link';
+import Footer from '@/Components/Footer/Footer';
+import Head from 'next/head';
+
 
 export default function Home() {
   return (
@@ -27,7 +31,7 @@ export default function Home() {
         }}
       >
           <img
-          src="https://media.giphy.com/media/xUOxf6JwJfI7Lm37k4/giphy.gif" 
+          src="https://media.istockphoto.com/id/1486626507/photo/businessman-use-ai-to-help-work-ai-learning-and-artificial-intelligence-business-modern.jpg?s=612x612&w=0&k=20&c=fMxbbRcBovcCWCgvmGLofM3CAfDy-nsv-OjmzmVWZ4U=" 
           alt="AI animation"
           style={{
             maxWidth: '45%',
@@ -66,7 +70,10 @@ export default function Home() {
          <section className="bg-blue-800 text-white text-center py-20">
           <h1 className="text-5xl font-bold">Welcome to Rella</h1>
           <p className="mt-4 text-xl">Your ultimate AI-powered platform for all your needs.</p>
-          <button className="mt-8 px-6 py-3 bg-white text-blue-800 rounded-full hover:bg-gray-200 transition">Get Started</button>
+           <Link href="/HomePage">
+            <button className="mt-8 px-6 py-3 bg-white text-blue-800 rounded-full hover:bg-gray-200 transition">Get Started</button>
+          </Link>
+          
         </section>
 
         
@@ -117,6 +124,7 @@ export default function Home() {
         </section>
       </main>
       <Contact />
+      <Footer/>
     </div>
   );
 }

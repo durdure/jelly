@@ -1,7 +1,7 @@
-import { execFile } from 'child_process';
 import formidable from 'formidable';
 import fs from 'fs';
 import path from 'path';
+import { execFile } from 'child_process';
 
 export const config = {
   api: {
@@ -9,18 +9,20 @@ export const config = {
   },
 };
 
-
 export default function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Only POST requests allowed' });
   }
-
+  
+  const uploadsDir = path.join(process.cwd(), 'uploads');
+    if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir);
+}
 
   const form = new formidable.IncomingForm();
-  form.uploadDir = path.join(process.cwd(), '/uploads');
+  form.uploadDir = path.join(process.cwd(), 'uploads'); // Correct path usage
   form.keepExtensions = true;
 
-  
   form.parse(req, (err, fields, files) => {
     if (err) {
       console.error('Formidable error:', err);
@@ -30,7 +32,6 @@ export default function handler(req, res) {
     const audioFilePath = files.audio[0].filepath;
     const pythonScriptPath = path.join(process.cwd(), 'scripts', 'transcribe.py');
 
-    
     execFile('python3', [pythonScriptPath, audioFilePath], (error, stdout, stderr) => {
       if (error) {
         console.error('Error executing script:', error);
